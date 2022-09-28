@@ -1,7 +1,6 @@
+import 'package:epicure/utils/routes.dart';
 import 'package:epicure/view/widgets/onboard/onboard.dart';
-import 'package:epicure/view_model/tool_models/route.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -31,7 +30,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> gotoHome(context) async {
     await Future.delayed(const Duration(seconds: 3));
-    Provider.of<RouteController>(context, listen: false)
-        .pushReplacementRoute(context, OnBoarding());
+    RouteController.pushReplacementRoute(context, OnBoarding());
   }
 }

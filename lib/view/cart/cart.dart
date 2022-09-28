@@ -28,14 +28,14 @@ class CartScreen extends StatelessWidget {
               scrollDirection: Axis.vertical,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: const EdgeInsets.only(left: 10),
                   child: Row(children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(15),
                       child: Image.network(
                         'https://assets.cntraveller.in/photos/60ba26c0bfe773a828a47146/4:3/w_1440,h_1080,c_limit/Burgers-Mumbai-Delivery.jpg',
                         height: 80,
-                        width: 100,
+                        width: 90,
                         fit: BoxFit.cover,
                       ),
                     ),

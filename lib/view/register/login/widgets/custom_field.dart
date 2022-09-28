@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 
 class TextFormWidget extends StatelessWidget {
-  const TextFormWidget({
-    Key? key,
-    required this.icon,
-    required this.hintText,
-    required this.iconsize,
-    required this.textHeight,
-    required this.padding,
-    required this.color,
-    required this.radius,
-    required this.iconcolor,
-  }) : super(key: key);
+  const TextFormWidget(
+      {Key? key,
+      required this.icon,
+      required this.hintText,
+      required this.iconsize,
+      required this.textHeight,
+      required this.padding,
+      required this.color,
+      required this.radius,
+      required this.iconcolor,
+      required this.controller,
+      this.sufixIcon})
+      : super(key: key);
 
   final IconData icon;
+  final IconButton? sufixIcon;
   final String hintText;
   final double iconsize;
   final double textHeight;
@@ -21,9 +24,11 @@ class TextFormWidget extends StatelessWidget {
   final Color color;
   final Color iconcolor;
   final double radius;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.all(padding),
         hintText: hintText,
@@ -32,6 +37,7 @@ class TextFormWidget extends StatelessWidget {
           color: iconcolor,
           size: iconsize,
         ),
+        suffixIcon: sufixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius),
         ),
@@ -43,6 +49,13 @@ class TextFormWidget extends StatelessWidget {
           borderSide: BorderSide(color: color),
         ),
       ),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return "Value is required";
+        } else {
+          return null;
+        }
+      },
     );
   }
 }

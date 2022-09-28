@@ -3,7 +3,7 @@ import 'package:epicure/view/Favorite/favorite.dart';
 import 'package:epicure/view/account/account.dart';
 import 'package:epicure/view/cart/cart.dart';
 import 'package:epicure/view/home/home.dart';
-import 'package:epicure/view_model/tool_models/bottom_navigation.dart';
+import 'package:epicure/view_model/main/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -1,11 +1,10 @@
 import 'package:epicure/utils/colors.dart';
-import 'package:epicure/view/log/login/login.dart';
-import 'package:epicure/view_model/tool_models/route.dart';
+import 'package:epicure/utils/routes.dart';
+import 'package:epicure/view/register/login/login.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:provider/provider.dart';
 
 class OnBoarding extends StatelessWidget {
   OnBoarding({Key? key}) : super(key: key);
@@ -15,8 +14,7 @@ class OnBoarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void _onIntroEnd(context) {
-      Provider.of<RouteController>(context, listen: false)
-          .pushReplacementRoute(context, const LoginScreen());
+      RouteController.pushReplacementRoute(context, const LoginScreen());
     }
 
     final bodyStyle = TextStyle(

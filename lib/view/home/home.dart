@@ -1,10 +1,11 @@
 import 'package:epicure/utils/colors.dart';
 import 'package:epicure/utils/constraints.dart';
+import 'package:epicure/utils/routes.dart';
 import 'package:epicure/view/display/restaurant_display/restaurant_disply.dart';
 import 'package:epicure/view/home/widgets/container_food_restaurants.dart';
 import 'package:epicure/view/home/widgets/custom_container.dart';
-import 'package:epicure/view/log/login/widgets/custom_field.dart';
-import 'package:epicure/view_model/tool_models/route.dart';
+import 'package:epicure/view/register/login/widgets/custom_field.dart';
+import 'package:epicure/view_model/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +14,7 @@ class HomeScreeen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<RouteController>(context, listen: false);
+    final textController = Provider.of<HomeController>(context, listen: false);
     return Scaffold(
       body: SafeArea(
           child: Padding(
@@ -63,7 +64,8 @@ class HomeScreeen extends StatelessWidget {
               ],
             ),
             kheight,
-            const TextFormWidget(
+            TextFormWidget(
+              controller: textController.searchController,
               icon: Icons.search_outlined,
               hintText: 'Search for Food or Restaurant',
               iconsize: 25,
@@ -153,46 +155,51 @@ class HomeScreeen extends StatelessWidget {
               ],
             ),
             kheight20,
-            Row(
-              children: [
-                AdsContainer(
-                  height: 230,
-                  width: 180,
-                  containerColor: kWhite,
-                  raidus: 20,
-                  subfontsize: 15,
-                  image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://blogs.revv.co.in/blogs/wp-content/uploads/2020/09/Shala-Restaurant-1024x768.jpg')),
-                  text: 'Veg & Non Veg',
-                  subText: 'Shala Restaurant',
-                  fontsize: 25,
-                  textColor: kBlack,
-                  ontap: () {
-                    provider.pushRoute(context, const RestaurantViewScreen());
-                  },
-                ),
-                kWidth10,
-                AdsContainer(
-                  height: 230,
-                  width: 180,
-                  containerColor: kWhite,
-                  raidus: 20,
-                  subfontsize: 15,
-                  image: const DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                        'https://www.revv.co.in/blogs/wp-content/uploads/2020/09/Grand-Pavilion-Kerala.jpg',
-                      )),
-                  text: 'Veg & Non Veg',
-                  subText: 'Grand Pavilion',
-                  fontsize: 25,
-                  textColor: kBlack,
-                  ontap: () {
-                    provider.pushRoute(context, const RestaurantViewScreen());
-                  },
-                ),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  AdsContainer(
+                    height: 230,
+                    width: 180,
+                    containerColor: kWhite,
+                    raidus: 20,
+                    subfontsize: 15,
+                    image: const DecorationImage(
+                        image: NetworkImage(
+                            'https://blogs.revv.co.in/blogs/wp-content/uploads/2020/09/Shala-Restaurant-1024x768.jpg')),
+                    text: 'Veg & Non Veg',
+                    subText: 'Shala Restaurant',
+                    fontsize: 25,
+                    textColor: kBlack,
+                    ontap: () {
+                      RouteController.pushRoute(
+                          context, const RestaurantViewScreen());
+                    },
+                  ),
+                  kWidth10,
+                  AdsContainer(
+                    height: 230,
+                    width: 180,
+                    containerColor: kWhite,
+                    raidus: 20,
+                    subfontsize: 15,
+                    image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                          'https://www.revv.co.in/blogs/wp-content/uploads/2020/09/Grand-Pavilion-Kerala.jpg',
+                        )),
+                    text: 'Veg & Non Veg',
+                    subText: 'Grand Pavilion',
+                    fontsize: 25,
+                    textColor: kBlack,
+                    ontap: () {
+                      RouteController.pushRoute(
+                          context, const RestaurantViewScreen());
+                    },
+                  ),
+                ],
+              ),
             ),
             kheight,
             Row(
@@ -211,42 +218,45 @@ class HomeScreeen extends StatelessWidget {
               ],
             ),
             kheight,
-            Row(
-              children: [
-                AdsContainer(
-                  height: 230,
-                  width: 180,
-                  containerColor: kWhite,
-                  raidus: 20,
-                  subfontsize: 15,
-                  image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://assets.cntraveller.in/photos/60ba26c0bfe773a828a47146/4:3/w_1440,h_1080,c_limit/Burgers-Mumbai-Delivery.jpg')),
-                  text: 'Cheesy Mozarella',
-                  subText: 'Beef Burger',
-                  fontsize: 25,
-                  textColor: kBlack,
-                  ontap: () {},
-                ),
-                kWidth10,
-                AdsContainer(
-                  height: 230,
-                  width: 180,
-                  containerColor: kWhite,
-                  raidus: 20,
-                  subfontsize: 15,
-                  image: const DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(
-                        'https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Pizza-from-Scratch_EXPS_FT20_8621_F_0505_1_home.jpg',
-                      )),
-                  text: 'Mixed Pizza',
-                  subText: 'Hawaiian Pizza',
-                  fontsize: 25,
-                  textColor: kBlack,
-                  ontap: () {},
-                ),
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  AdsContainer(
+                    height: 230,
+                    width: 180,
+                    containerColor: kWhite,
+                    raidus: 20,
+                    subfontsize: 15,
+                    image: const DecorationImage(
+                        image: NetworkImage(
+                            'https://assets.cntraveller.in/photos/60ba26c0bfe773a828a47146/4:3/w_1440,h_1080,c_limit/Burgers-Mumbai-Delivery.jpg')),
+                    text: 'Cheesy Mozarella',
+                    subText: 'Beef Burger',
+                    fontsize: 25,
+                    textColor: kBlack,
+                    ontap: () {},
+                  ),
+                  kWidth10,
+                  AdsContainer(
+                    height: 230,
+                    width: 180,
+                    containerColor: kWhite,
+                    raidus: 20,
+                    subfontsize: 15,
+                    image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: NetworkImage(
+                          'https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Pizza-from-Scratch_EXPS_FT20_8621_F_0505_1_home.jpg',
+                        )),
+                    text: 'Mixed Pizza',
+                    subText: 'Hawaiian Pizza',
+                    fontsize: 25,
+                    textColor: kBlack,
+                    ontap: () {},
+                  ),
+                ],
+              ),
             ),
           ]),
         ),

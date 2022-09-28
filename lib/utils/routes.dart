@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class RouteController with ChangeNotifier {
-  pushRoute(context, Widget screen) {
+class RouteController {
+  static pushRoute(context, Widget screen) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: ((context) => screen)));
   }
 
-  popupRoute(context) {
+  static popupRoute(context) {
     Navigator.of(context).pop();
   }
 
-  pushReplacementRoute(context, Widget screen) {
+  static pushReplacementRoute(context, Widget screen) {
     Navigator.of(context)
         .pushReplacement(MaterialPageRoute(builder: ((context) => screen)));
 

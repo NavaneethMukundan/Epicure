@@ -38,12 +38,17 @@ class CustomContainerWidget extends StatelessWidget {
               ),
               child: image),
           kWidth,
-          Text(
-            text,
-            style: TextStyle(
-                fontSize: fontsize,
-                fontWeight: FontWeight.bold,
-                color: textColor),
+          Expanded(
+            child: Text(
+              text,
+              overflow: TextOverflow.fade,
+              maxLines: 1,
+              softWrap: false,
+              style: TextStyle(
+                  fontSize: fontsize,
+                  fontWeight: FontWeight.bold,
+                  color: textColor),
+            ),
           )
         ],
       ),
