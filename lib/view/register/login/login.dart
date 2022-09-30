@@ -1,9 +1,10 @@
 import 'package:epicure/utils/colors.dart';
 import 'package:epicure/utils/constraints.dart';
-import 'package:epicure/view/home/home.dart';
+import 'package:epicure/utils/routes.dart';
 import 'package:epicure/view/register/login/widgets/custom_buton.dart';
 import 'package:epicure/view/register/login/widgets/custom_field.dart';
 import 'package:epicure/view/register/signup/signup.dart';
+import 'package:epicure/view/widgets/navigation/navigation.dart';
 import 'package:epicure/view_model/register/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -92,11 +93,10 @@ class LoginScreen extends StatelessWidget {
                               ),
                               kheight20,
                               TextFormWidget(
-                                  controller:
-                                      signInController.userNameController,
+                                  controller: signInController.emailController,
                                   padding: 25,
-                                  icon: Icons.person_outline_rounded,
-                                  hintText: 'User Name',
+                                  icon: Icons.email_outlined,
+                                  hintText: 'Email',
                                   iconsize: 26,
                                   textHeight: 15,
                                   color: mainColor,
@@ -136,18 +136,25 @@ class LoginScreen extends StatelessWidget {
                                     )),
                               ),
                               kheight,
-                              Center(
-                                child: CustomButton(
-                                  text: 'Sign In',
-                                  height: 60,
-                                  width: 260,
-                                  fontsize: 20,
-                                  color: kWhite,
-                                  ontap: () {
-                                    signInController.formValidation(
-                                        context, const HomeScreeen());
-                                  },
-                                ),
+                              Consumer<SignInController>(
+                                builder: (context, value, child) {
+                                  return Center(
+                                    child: CustomButton(
+                                      text: 'Sign In',
+                                      height: 60,
+                                      width: 260,
+                                      fontsize: 20,
+                                      color: kWhite,
+                                      ontap: () {
+                                        // value.isloading
+                                        //     ? const CircularProgressIndicator()
+                                        //     : value.signInButton(context);
+                                        RouteController.pushRoute(
+                                            context, BottomNavigation());
+                                      },
+                                    ),
+                                  );
+                                },
                               ),
                               kheight20,
                               Row(

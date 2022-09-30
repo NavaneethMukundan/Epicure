@@ -1,7 +1,7 @@
 import 'package:epicure/view/widgets/splash/splash_screen.dart';
 import 'package:epicure/view_model/home/home.dart';
 import 'package:epicure/view_model/main/bottom_navigation.dart';
-import 'package:epicure/view_model/register/login_signup.dart';
+import 'package:epicure/view_model/register/signup.dart';
 import 'package:epicure/view_model/register/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

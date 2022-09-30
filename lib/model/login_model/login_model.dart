@@ -1,22 +1,13 @@
 class LoginModel {
-  String? name;
+  String? email;
   String? password;
-  String? confirmPassword;
-  int? phoneNumber;
 
-  LoginModel({
-    this.name,
-    this.confirmPassword,
-    this.password,
-    this.phoneNumber,
-  });
+  LoginModel({this.email, this.password});
 
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> tojson() {
     return {
-      "name": name,
-      "phoneNo": phoneNumber,
+      "email": email,
       "password": password,
-      "confirmPassword": confirmPassword
     };
   }
 }

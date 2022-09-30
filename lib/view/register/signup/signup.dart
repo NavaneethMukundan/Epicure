@@ -2,8 +2,7 @@ import 'package:epicure/utils/colors.dart';
 import 'package:epicure/utils/constraints.dart';
 import 'package:epicure/view/register/login/widgets/custom_buton.dart';
 import 'package:epicure/view/register/login/widgets/custom_field.dart';
-import 'package:epicure/view/widgets/navigation/navigation.dart';
-import 'package:epicure/view_model/register/login_signup.dart';
+import 'package:epicure/view_model/register/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -160,18 +159,27 @@ class SignUpScreen extends StatelessWidget {
                                     radius: 30);
                               }),
                               kheight50,
-                              Center(
-                                child: CustomButton(
-                                  text: 'Sign up',
-                                  width: 260,
-                                  height: 60,
-                                  fontsize: 20,
-                                  color: kWhite,
-                                  ontap: () {
-                                    signUpController.formValidation(
-                                        context, BottomNavigation());
-                                  },
-                                ),
+                              Consumer<SignUpController>(
+                                builder: (context, value, child) {
+                                  return Center(
+                                    child: value.isLoading
+                                        ? const CircularProgressIndicator()
+                                        : CustomButton(
+                                            text: 'Sign up',
+                                            width: 260,
+                                            height: 60,
+                                            fontsize: 20,
+                                            color: kWhite,
+                                            ontap: () {
+                                              // signUpController
+                                              //     .signUpFormKey.currentState!
+                                              //     .validate();
+                                              signUpController
+                                                  .signupButton(context);
+                                            },
+                                          ),
+                                  );
+                                },
                               ),
                               kheight,
                               Row(
