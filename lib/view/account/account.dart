@@ -51,7 +51,7 @@ class AccountScreen extends StatelessWidget {
                           Text(
                             'Order',
                             style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: kWhite),
                           ),
@@ -81,7 +81,7 @@ class AccountScreen extends StatelessWidget {
                           Text(
                             'Spend',
                             style: TextStyle(
-                                fontSize: 25,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: kWhite),
                           ),
@@ -175,7 +175,7 @@ class SettingContainer extends StatelessWidget {
             ),
             child: Text(
               text,
-              style: const TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           )
         ],

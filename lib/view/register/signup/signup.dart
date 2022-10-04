@@ -91,6 +91,7 @@ class SignUpScreen extends StatelessWidget {
                               ),
                               kheight20,
                               TextFormWidget(
+                                hiddentext: false,
                                 controller: signUpController.userNameController,
                                 icon: Icons.person_outline_rounded,
                                 hintText: 'User Name',
@@ -103,6 +104,7 @@ class SignUpScreen extends StatelessWidget {
                               ),
                               kheight20,
                               TextFormWidget(
+                                  hiddentext: false,
                                   controller: signUpController.emailController,
                                   icon: Icons.email_outlined,
                                   hintText: 'Email',
@@ -116,6 +118,7 @@ class SignUpScreen extends StatelessWidget {
                               Consumer<SignUpController>(
                                   builder: (context, value, child) {
                                 return TextFormWidget(
+                                    hiddentext: value.isHidden ? true : false,
                                     controller:
                                         signUpController.passwordController,
                                     padding: 20,
@@ -139,6 +142,7 @@ class SignUpScreen extends StatelessWidget {
                               Consumer<SignUpController>(
                                   builder: (context, value, child) {
                                 return TextFormWidget(
+                                    hiddentext: value.isHidden ? true : false,
                                     controller: signUpController
                                         .confirmPasswordController,
                                     icon: Icons.lock_outlined,
@@ -171,9 +175,6 @@ class SignUpScreen extends StatelessWidget {
                                             fontsize: 20,
                                             color: kWhite,
                                             ontap: () {
-                                              // signUpController
-                                              //     .signUpFormKey.currentState!
-                                              //     .validate();
                                               signUpController
                                                   .signupButton(context);
                                             },

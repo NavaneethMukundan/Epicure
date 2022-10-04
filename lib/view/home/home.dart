@@ -16,7 +16,7 @@ class HomeScreeen extends StatelessWidget {
   Widget build(BuildContext context) {
     final textController = Provider.of<HomeController>(context, listen: false);
     return Scaffold(
-      body: SafeArea(
+      body: SafeArea( 
           child: Padding(
         padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
         child: SingleChildScrollView(
@@ -90,7 +90,7 @@ class HomeScreeen extends StatelessWidget {
                       height: 22,
                     ),
                     text: 'Fast Food',
-                    fontsize: 17,
+                    fontsize: 15,
                     textColor: kWhite,
                   ),
                   kWidth,
@@ -104,7 +104,7 @@ class HomeScreeen extends StatelessWidget {
                       height: 35,
                     ),
                     text: 'Breakfast',
-                    fontsize: 17,
+                    fontsize: 15,
                     textColor: kWhite,
                   ),
                   kWidth,
@@ -118,7 +118,7 @@ class HomeScreeen extends StatelessWidget {
                       height: 40,
                     ),
                     text: 'Pizza',
-                    fontsize: 17,
+                    fontsize: 15,
                     textColor: kWhite,
                   ),
                   kWidth10,
@@ -132,7 +132,7 @@ class HomeScreeen extends StatelessWidget {
                       height: 40,
                     ),
                     text: 'Drinks',
-                    fontsize: 17,
+                    fontsize: 15,
                     textColor: kWhite,
                   ),
                 ],
@@ -170,7 +170,7 @@ class HomeScreeen extends StatelessWidget {
                             'https://blogs.revv.co.in/blogs/wp-content/uploads/2020/09/Shala-Restaurant-1024x768.jpg')),
                     text: 'Veg & Non Veg',
                     subText: 'Shala Restaurant',
-                    fontsize: 25,
+                    fontsize: 20,
                     textColor: kBlack,
                     ontap: () {
                       RouteController.pushRoute(
@@ -191,7 +191,7 @@ class HomeScreeen extends StatelessWidget {
                         )),
                     text: 'Veg & Non Veg',
                     subText: 'Grand Pavilion',
-                    fontsize: 25,
+                    fontsize: 20,
                     textColor: kBlack,
                     ontap: () {
                       RouteController.pushRoute(
@@ -233,7 +233,7 @@ class HomeScreeen extends StatelessWidget {
                             'https://assets.cntraveller.in/photos/60ba26c0bfe773a828a47146/4:3/w_1440,h_1080,c_limit/Burgers-Mumbai-Delivery.jpg')),
                     text: 'Cheesy Mozarella',
                     subText: 'Beef Burger',
-                    fontsize: 25,
+                    fontsize: 20,
                     textColor: kBlack,
                     ontap: () {},
                   ),
@@ -251,7 +251,7 @@ class HomeScreeen extends StatelessWidget {
                         )),
                     text: 'Mixed Pizza',
                     subText: 'Hawaiian Pizza',
-                    fontsize: 25,
+                    fontsize: 20,
                     textColor: kBlack,
                     ontap: () {},
                   ),

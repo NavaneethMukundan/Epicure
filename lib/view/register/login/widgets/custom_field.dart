@@ -12,6 +12,7 @@ class TextFormWidget extends StatelessWidget {
       required this.radius,
       required this.iconcolor,
       required this.controller,
+       this.hiddentext = true,
       this.sufixIcon})
       : super(key: key);
 
@@ -25,9 +26,11 @@ class TextFormWidget extends StatelessWidget {
   final Color iconcolor;
   final double radius;
   final TextEditingController controller;
+  final bool hiddentext;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: hiddentext,
       controller: controller,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.all(padding),

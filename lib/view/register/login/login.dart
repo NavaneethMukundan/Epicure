@@ -1,10 +1,8 @@
 import 'package:epicure/utils/colors.dart';
 import 'package:epicure/utils/constraints.dart';
-import 'package:epicure/utils/routes.dart';
 import 'package:epicure/view/register/login/widgets/custom_buton.dart';
 import 'package:epicure/view/register/login/widgets/custom_field.dart';
 import 'package:epicure/view/register/signup/signup.dart';
-import 'package:epicure/view/widgets/navigation/navigation.dart';
 import 'package:epicure/view_model/register/sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -93,6 +91,7 @@ class LoginScreen extends StatelessWidget {
                               ),
                               kheight20,
                               TextFormWidget(
+                                  hiddentext: false,
                                   controller: signInController.emailController,
                                   padding: 25,
                                   icon: Icons.email_outlined,
@@ -106,6 +105,7 @@ class LoginScreen extends StatelessWidget {
                               Consumer<SignInController>(
                                   builder: (context, value, child) {
                                 return TextFormWidget(
+                                    hiddentext: value.isHidden ? true : false,
                                     controller:
                                         signInController.passwordController,
                                     padding: 25,
@@ -146,11 +146,9 @@ class LoginScreen extends StatelessWidget {
                                       fontsize: 20,
                                       color: kWhite,
                                       ontap: () {
-                                        // value.isloading
-                                        //     ? const CircularProgressIndicator()
-                                        //     : value.signInButton(context);
-                                        RouteController.pushRoute(
-                                            context, BottomNavigation());
+                                        value.isloading
+                                            ? const CircularProgressIndicator()
+                                            : value.signInButton(context);
                                       },
                                     ),
                                   );

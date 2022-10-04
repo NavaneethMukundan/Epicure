@@ -29,7 +29,6 @@ class SigninRepository {
     } else {
       return LoginResponse(message: 'No Internet Connection');
     }
-
     return null;
   }
 }

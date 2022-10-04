@@ -32,10 +32,10 @@ const TextStyle kTextStyle2 =
     TextStyle(fontSize: 20, fontWeight: FontWeight.w500);
 
 const TextStyle kTextStyleBold = TextStyle(
-  fontSize: 40,
+  fontSize: 35,
   fontWeight: FontWeight.w700,
 );
 const TextStyle kTextStyleBoldEx = TextStyle(
-  fontSize: 40,
+  fontSize: 30,
   fontWeight: FontWeight.w800,
 );
